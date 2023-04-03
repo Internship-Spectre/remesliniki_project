@@ -1,9 +1,15 @@
 {% extends 'app.html' %}
+{% load static %}
 
-{% block title %}Домашняя страница{% endblock %}
+{% block title %}{{title}}{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{% static 'styles/home_index.css' %}">
 
-<h1>Хуй</h1>
-
+<div class="center">
+  <form>
+    <input type="text" id="search-input" placeholder="Поиск...">
+    <button type="submit" id="search-button">Найти</button>
+  </form>
+</div>
 {% endblock %}
