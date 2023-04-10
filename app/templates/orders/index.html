@@ -1,0 +1,17 @@
+{% extends 'app.html' %}
+
+{% block content %}
+<title>Кнопка заказа</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h1>Добро пожаловать в наш магазин!</h1>
+    <a href="{% url 'orders_create' %}" class="btn btn-primary">Перейти на другую страницу</a>
+  </div>
+</body>
+
+</html>
+{% endblock %}
