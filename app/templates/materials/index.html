@@ -2,20 +2,24 @@
 
 {% block content %}
   <h1>Материалы</h1>
-  <table>
+  <table class="table table-striped">
     <thead>
       <tr>
-        <th>Название</th>
-        <th>Описание</th>
-        <th>Количество</th>
+        <th scope="col">#</th>
+        <th scope="col">Название</th>
+        <th scope="col">Описание</th>
+        <th scope="col">Количество</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
       {% for material in materials %}
         <tr>
+          <td>{{ material.id }}</td>
           <td>{{ material.name }}</td>
           <td>{{ material.description }}</td>
           <td>{{ material.quantity }}</td>
+          <td><a href="#" class="btn btn-warning">Показать</td>
         </tr>
       {% endfor %}
     </tbody>

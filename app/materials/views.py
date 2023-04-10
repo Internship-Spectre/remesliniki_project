@@ -1,7 +1,9 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Material
 
 
 def index(request):
-    return render(request, 'materials/index.html')
+    materials = Material.objects.all()
+
+    args = {'materials': materials}
+    return render(request, 'materials/index.html', args)
