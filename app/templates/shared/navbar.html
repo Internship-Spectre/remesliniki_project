@@ -1,22 +1,22 @@
 {% load static %}
 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #B3632B;">
   <div class="container-fluid">
-    <a class="navbar-brand"
-href="#"><img src="{% static 'app/images/logo.png' %}" alt="My image" style="max-width: 10%"> Ремесленники</a>
+    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'app/images/logo.png' %}" alt="My image" style="max-width: 10%">Ремесленники</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
+      {% with request.resolver_match.url_name as url_name %}
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
           <!--<button type="button" class="btn btn-danger btn-lg" style="background-color:#ce2029;"><a class="favorite styled" href="#">Главная</a></button> -->
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-decoration-none active">Главная</a>
+          <a href="{% url 'home' %}" class="nav-link text-decoration-none {% if url_name == 'home' %}active{% endif %}">Главная</a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link text-decoration-none">О нас</a>
+          <a href="{% url 'materials_index' %}" class="nav-link text-decoration-none {% if url_name == 'materials_index' %}active{% endif %}">Материалы</a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link text-decoration-none">Услуги</a>
@@ -28,7 +28,10 @@ href="#"><img src="{% static 'app/images/logo.png' %}" alt="My image" style="max
           <a href="#" class="nav-link text-decoration-none">Контакты</a>
         </li>
       </ul>
+      {% endwith %}
     </div>
-    <button type="button" class="btn btn-outline-light btn-lg">Авторизация</button>
+    <div class="btn btn-outline-light btn-lg">
+      <a href="{% url 'login' %}" class="text-decoration-none text-light">Авторизация</a>
+    </div>
   </div>
 </nav>
