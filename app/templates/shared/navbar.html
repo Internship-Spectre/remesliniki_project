@@ -24,8 +24,17 @@
       </ul>
       {% endwith %}
     </div>
-    <div class="btn btn-outline-light btn-lg">
-      <a href="{% url 'login' %}" class="text-decoration-none text-light">Авторизация</a>
-    </div>
+    {% if request.user.is_authenticated %}
+      <div class="me-1 ps-1">
+        <h1 class="text-light">{{ request.user.username }}</h1>
+      </div>
+      <div class="ms-1 pe-1">
+        <a href="#" class="text-light btn btn-outline-light">Профиль</a>
+      </div>
+    {% else %}
+      <div class="btn btn-outline-light btn-lg">
+        <a href="{% url 'login' %}" class="text-decoration-none text-light">Авторизация</a>
+      </div>
+    {% endif %}
   </div>
 </nav>
