@@ -14,102 +14,17 @@
     </form>
   </div>
 </nav>
-<div class="row">
-  <div class="col-sm">
-    <div class="card">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  {% for i in '123456789'|make_list %}
+  <div class="col">
+    <div class="card shadow">
       <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="111" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
+        <h5 class="card-title"><img class="img-fluid img-thumbnail" src="{% static 'app/images/placeholder-16-9.jpg' %}"></h5>
+        <p class="card-text">Описание товара {{ forloop.counter }}</p>
+        <a href="#" class="btn btn-warning">Посмотреть</a>
       </div>
     </div>
   </div>
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="111" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="111" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="w-100"></div>
-<div class="row">
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="111" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="111" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="111" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="w-100"></div>
-<div class="row">
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="111" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="111" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><img class="fit-picture" src="https://source.unsplash.com/random/" width="320"
-            height="150" alt="Grapefruit slice atop a pile of other slices"></h5>
-        <p class="card-text">Описание товара</p>
-        <a href="#" class="btn btn-primary">Добавить в корзину</a>
-      </div>
-    </div>
-  </div>
+  {% endfor %}
 </div>
 {% endblock %}
