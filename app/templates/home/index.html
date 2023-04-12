@@ -6,14 +6,14 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'styles/home_index.css' %}">
 
-<nav class="navbar bg-body-tertiary">
+<div class="card mt-3 mb-3 p-2">
   <div class="container-fluid">
-    <form class="d-flex" role="search">
+    <form class="d-flex m-2 p-2" role="search">
       <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-      <button class="btn btn-outline-success" type="submit">Поиск</button>
+      <button class="btn btn-outline-warning" type="submit">Поиск</button>
     </form>
   </div>
-</nav>
+</div>
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
   {% for i in '123456789'|make_list %}
   <div class="col">
