@@ -10,9 +10,6 @@
       {% with request.resolver_match.url_name as url_name %}
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
         <li class="nav-item">
-          <!--<button type="button" class="btn btn-danger btn-lg" style="background-color:#ce2029;"><a class="favorite styled" href="#">Главная</a></button> -->
-        </li>
-        <li class="nav-item">
           <a href="{% url 'home' %}" class="nav-link text-decoration-none {% if url_name == 'home' %}active{% endif %}">Главная</a>
         </li>
         <li class="nav-item">
