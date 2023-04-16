@@ -1,7 +1,7 @@
 {% load static %}
 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #B3632B;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'app/images/logo.png' %}" alt="My image" style="max-width: 10%">Ремесленники</a>
+    <a class="navbar-brand" href="{% url 'home' %}" style="max-width: 150px;"><img src="{% static 'app/images/logo.png' %}" alt="My image" style="max-width: 27px">Ремесленники</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
       aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -9,9 +9,6 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       {% with request.resolver_match.url_name as url_name %}
       <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <!--<button type="button" class="btn btn-danger btn-lg" style="background-color:#ce2029;"><a class="favorite styled" href="#">Главная</a></button> -->
-        </li>
         <li class="nav-item">
           <a href="{% url 'home' %}" class="nav-link text-decoration-none {% if url_name == 'home' %}active{% endif %}">Главная</a>
         </li>
@@ -23,18 +20,20 @@
         </li>
       </ul>
       {% endwith %}
-    </div>
-    {% if request.user.is_authenticated %}
-      <div class="me-1 ps-1">
-        <h1 class="text-light">{{ request.user.username }}</h1>
-      </div>
-      <div class="ms-1 pe-1">
-        <a href="#" class="text-light btn btn-outline-light">Профиль</a>
-      </div>
-    {% else %}
-      <div class="btn btn-outline-light btn-lg">
-        <a href="{% url 'login' %}" class="text-decoration-none text-light">Авторизация</a>
-      </div>
-    {% endif %}
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="on-click-unfold-toggle">
+          <!-- <div class="me-1 ps-1"> -->
+            <p class="text-light d-inline">{{ request.user.username }}</p>
+          <!-- </div> -->
+          <div class="on-click-unfold-toggle--modal">
+              <a href="#" class="text-dark btn btn-outline-dark btn-hover-light">Профиль</a>
+            {% else %}
+              <a href="{% url 'login' %}" class="text-decoration-none text-dark">Авторизация</a>
+            {% endif %}
+          </div>
   </div>
 </nav>
+
+<script type="module" src="{% static 'scripts/utils.js' %}"></script>
+<script type="module" src="{% static 'scripts/on-click-unfold-toggle.js' %}"></script>
