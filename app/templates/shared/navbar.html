@@ -20,18 +20,20 @@
         </li>
       </ul>
       {% endwith %}
-    </div>
-    {% if request.user.is_authenticated %}
-      <div class="me-1 ps-1">
-        <h1 class="text-light">{{ request.user.username }}</h1>
-      </div>
-      <div class="ms-1 pe-1">
-        <a href="#" class="text-light btn btn-outline-light">Профиль</a>
-      </div>
-    {% else %}
-      <div class="btn btn-outline-light btn-lg">
-        <a href="{% url 'login' %}" class="text-decoration-none text-light">Авторизация</a>
-      </div>
-    {% endif %}
+        </div>
+        {% if request.user.is_authenticated %}
+        <div class="on-click-unfold-toggle">
+          <!-- <div class="me-1 ps-1"> -->
+            <p class="text-light d-inline">{{ request.user.username }}</p>
+          <!-- </div> -->
+          <div class="on-click-unfold-toggle--modal">
+              <a href="#" class="text-dark btn btn-outline-dark btn-hover-light">Профиль</a>
+            {% else %}
+              <a href="{% url 'login' %}" class="text-decoration-none text-dark">Авторизация</a>
+            {% endif %}
+          </div>
   </div>
 </nav>
+
+<script type="module" src="{% static 'scripts/utils.js' %}"></script>
+<script type="module" src="{% static 'scripts/on-click-unfold-toggle.js' %}"></script>

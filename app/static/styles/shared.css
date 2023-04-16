@@ -1,0 +1,21 @@
+/*
+Эти стили стили применяются для каждой страницы
+и необходимы для корректного отображения страниц
+и работы скриптов
+*/
+
+.on-click-unfold-toggle--modal {
+    z-index: 10001;
+
+    border-radius: 7px;
+
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .7);
+    /* display: none; */
+
+    transition: .2s;
+}
