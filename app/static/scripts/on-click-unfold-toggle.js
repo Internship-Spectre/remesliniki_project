@@ -1,16 +1,16 @@
 import { docQueryAll } from './utils.js'
 
-// функция по нажатию на элемент отображает элемент с классом on-click-unfold--modal
-// 
+// функция по нажатию на элемент отображает элемент с классом on-click-unfold-toggle--modal
 const onClickUnfoldToggle = (main, modal) => {
+
+    // выбирает все элементы с указанным классом
     const mains = docQueryAll(main)
     const modals = docQueryAll(modal)
 
-    // const styles = () => {
-    //     document
-    // }
-
+    // логика приложения на нажатие
     const onClickLogic = (main, modal) => {
+
+        // дефолтное состояние модалки(невидно) 
         let state = false
 
         main.addEventListener('click', () => {
@@ -29,16 +29,7 @@ const onClickUnfoldToggle = (main, modal) => {
                 state = false
             }
         })
-
-        // modal.addEventListener('mouseout', () => {
-        //     modal.style.width = 0
-        //     modal.style.height = 0
-        // })
-        // main.addEventListener('click', () => {
-        //     modal.style.width = 0
-        //     modal.style.height = 0
-        // })
-    }
+    } // fun onClickLogic
 
     for(let M = 0; M < mains.length; M++) {
         console.log(mains[M])
@@ -46,6 +37,7 @@ const onClickUnfoldToggle = (main, modal) => {
         onClickLogic(mains[M], modals[M])
 
     } // for T
-}
+} // fun onClickUnfoldToggle
 
+// запускает скрипт прикрепленный к странице
 onClickUnfoldToggle('.on-click-unfold-toggle', '.on-click-unfold-toggle--modal')
