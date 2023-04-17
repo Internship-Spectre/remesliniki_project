@@ -37,32 +37,32 @@
 
     </div>
     <h1 style="margin-top:15px;text-align:center;">Уникальные товары</h1>
-    <div class="scroll-bar">
-        <div class="card">
+    <div class="scroll-list">
+        <div class="card scroll-list-card">
             <img src="{% static 'app/images/Керамика.png' %}" alt="Картинка 1">
             <div class="title">Керамика</div>
         </div>
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{% static 'app/images/wood.jpg' %}" alt="Картинка 2">
             <div class="title">Дерево</div>
         </div>
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{% static 'app/images/metall.jpg' %}" alt="Картинка 3">
             <div class="title">Металл</div>
         </div>
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{% static 'app/images/skin.jpg' %}" alt="Картинка 4">
             <div class="title">Кожа</div>
         </div>
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="image5.jpg" alt="Картинка 5">
             <div class="title">Название картинки 5</div>
         </div>
     </div>
     <h1 style="margin-top: 15px; text-align: center;">Материалы</h1>
-    <div class="scroll-bar">
+    <div class="scroll-list">
         {% for material in materials %}
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{{ material.image }}">
             <div class="title" style="text-align: center;">{{ material.name }}</div>
         </div>
