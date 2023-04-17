@@ -25,9 +25,9 @@
         <div class="on-click-unfold-toggle">
           <!-- <div class="me-1 ps-1"> -->
             <p class="text-light d-inline">{{ request.user.username }}</p>
+            <a href="{% url 'logout' %}">Выйти</a>
           <!-- </div> -->
           <div class="on-click-unfold-toggle--modal">
-              <a href="#" class="text-dark btn btn-outline-dark btn-hover-light">Профиль</a>
             {% else %}
               <a href="{% url 'login' %}" class="text-decoration-none text-dark">Авторизация</a>
             {% endif %}
