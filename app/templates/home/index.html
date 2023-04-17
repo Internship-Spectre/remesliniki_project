@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% block title %}Главная страница{% endblock %}
+
 {% block links %}
 <link href="{% static 'styles/home/index.css' %}" rel="stylesheet">
 
@@ -10,10 +12,11 @@
 
 {% block content %}
 <div class="container">
-    <header class="header">
-        <img src="{% static 'images/logos/bear-head-orange-red.png' %}" alt="Лого" class="logo">
-        <h1>Ремесленики</h1>
-    </header>
+    <div class="header shadow" style="background-color: #B3632B;">
+        <img src="{% static 'images/logos/bear-orange-red-left.png' %}" class="logo" style="width: 2.5em;">
+        <h1 class="text-light pe-2" style="font-family: 'Mysteria Nouveau'; font-size: 50px;">Ремесленики</h1>
+        <img src="{% static 'images/logos/bear-orange-red-right.png' %}" class="logo" style="width: 2.5em;">
+    </div>
 
     <div class="text">
         <h2>О нашем деле</h2>
