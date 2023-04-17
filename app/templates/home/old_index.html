@@ -1,0 +1,29 @@
+{% extends 'app.html' %}
+{% load static %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+
+<div class="card mt-3 mb-3 p-2 shadow">
+  <div class="container-fluid">
+    <form class="d-flex m-2 p-2" role="search">
+      <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+      <button class="btn btn-outline-warning" type="submit">Поиск</button>
+    </form>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  {% for i in '123456789'|make_list %}
+  <div class="col">
+    <div class="card shadow">
+      <div class="card-body">
+        <h5 class="card-title"><img class="img-fluid img-thumbnail" src="{% static 'app/images/placeholder-16-9.jpg' %}"></h5>
+        <p class="card-text">Описание товара {{ forloop.counter }}</p>
+        <a href="#" class="btn btn-warning">Посмотреть</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

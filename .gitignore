@@ -137,3 +137,8 @@ GitHub.sublime-settings
 .history
 
 app/**/migrations/*
+
+# files/**/*.png
+# files/**/*.jpg
+# files/**/*.jpeg
+# files/**/*.gif

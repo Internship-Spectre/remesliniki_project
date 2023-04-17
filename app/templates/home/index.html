@@ -1,29 +1,75 @@
 {% extends 'app.html' %}
+
 {% load static %}
 
-{% block title %}{{title}}{% endblock %}
+{% block links %}
+<link href="{% static 'styles/home/index.css' %}" rel="stylesheet">
+{% endblock %}
 
 {% block content %}
+<div class="container">
+    <header class="header">
+        <img src="{% static 'images/logos/bear-head-orange-red.png' %}" alt="Лого" class="logo">
+        <h1>Ремесленики</h1>
+    </header>
 
-<div class="card mt-3 mb-3 p-2 shadow">
-  <div class="container-fluid">
-    <form class="d-flex m-2 p-2" role="search">
-      <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-      <button class="btn btn-outline-warning" type="submit">Поиск</button>
-    </form>
-  </div>
-</div>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-  {% for i in '123456789'|make_list %}
-  <div class="col">
-    <div class="card shadow">
-      <div class="card-body">
-        <h5 class="card-title"><img class="img-fluid img-thumbnail" src="{% static 'app/images/placeholder-16-9.jpg' %}"></h5>
-        <p class="card-text">Описание товара {{ forloop.counter }}</p>
-        <a href="#" class="btn btn-warning">Посмотреть</a>
-      </div>
+    <div class="text">
+        <h2>О нашем деле</h2>
+        <p style="text-align: justify;">Наша организация - это команда талантливых и креативных специалистов, которые превращают разные материалы
+            в уникальные и качественные изделия. От дерева до металла, мы создаем прекрасные предметы, которые не
+            только функциональны, но и настоящие произведения искусства.
+
+            Мы проектируем и изготавливаем мебель, декоративные изделия, аксессуары и многое другое, используя самые
+            разные материалы. Мы предлагаем широкий выбор вариантов для любого вкуса и бюджета, и мы уверены, что
+            каждый найдет у нас то, что ищет.
+
+            Но наша работа - это не просто создание красивых вещей, это искусство и технология вместе. Мы используем
+            передовые технологии и материалы высокого качества, чтобы создавать продукты, которые будут долго
+            служить своим владельцам и не потеряют своей привлекательности с течением времени.
+
+            Наша цель - вдохновлять людей на творчество и помогать им создавать уют и красоту в своих домах. Мы
+            гордимся своей работой и стремимся сделать наших клиентов счастливыми своими покупками. Приходите к нам
+            и убедитесь сами, что мы делаем лучшие товары из разных материалов!</p>
+
     </div>
-  </div>
-  {% endfor %}
+    <h1 style="margin-top:15px;text-align:center;">Уникальные товары</h1>
+    <div class="scroll-bar">
+        <div class="card">
+            <img src="{% static 'app/images/Керамика.png' %}" alt="Картинка 1">
+            <div class="title">Керамика</div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/images/wood.jpg' %}" alt="Картинка 2">
+            <div class="title">Дерево</div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/images/metall.jpg' %}" alt="Картинка 3">
+            <div class="title">Металл</div>
+        </div>
+        <div class="card">
+            <img src="{% static 'app/images/skin.jpg' %}" alt="Картинка 4">
+            <div class="title">Кожа</div>
+        </div>
+        <div class="card">
+            <img src="image5.jpg" alt="Картинка 5">
+            <div class="title">Название картинки 5</div>
+        </div>
+    </div>
+    <h1 style="margin-top: 15px; text-align: center;">Материалы</h1>
+    <div class="scroll-bar">
+        {% for material in materials %}
+        <div class="card" style="width: 300px;">
+            <img src="{{ material.image }}">
+            <div class="title" style="text-align: center;">{{ material.name }}</div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="links">
+        <a href="#">Vkontakte</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+    </div>
 </div>
+
 {% endblock %}
