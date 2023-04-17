@@ -38,30 +38,30 @@
 
     </div>
     <h1 style="margin-top:15px;text-align:center;">Уникальные товары</h1>
-    <div class="scroll-bar">
-        <div class="card">
+    <div class="scroll-bar d-flex overflow-scroll" style="content-visibil;">
+        <div class="card scroll-list-card">
             <img src="{% static 'images/tumba.jpg' %}" alt="Картинка 1">
             <div class="title">Тумба прикроватная с двумя ящиками из массива сосны</div>
         </div>
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{% static 'images/XXL.png' %}" alt="Картинка 2">
             <div class="title">Дубовый стол с применением эпоксидной смолы</div>
         </div>
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{% static 'images/tabur.jpg' %}" alt="Картинка 3">
             <div class="title">Стул из березового массива</div>
         </div>
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{% static 'images/koshel.jpg' %}" alt="Картинка 4">
             <div class="title">Дорожный набор-кошелек из кожи</div>
         </div>
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{% static 'images/vasa.png' %}" alt="Картинка 5">
             <div class="title">Керамическая ваза</div>
         </div>
     </div>
     <h1 style="margin-top: 15px; text-align: center;">Материалы</h1>
-    <div class="scroll-bar">
+    <div class="scroll-bar d-flex overflow-scroll">
         {% for material in materials %}
         <div class="card scroll-list-card">
             <img src="{{ material.image }}">
