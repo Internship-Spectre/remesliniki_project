@@ -9,7 +9,7 @@
 {% block content %}
 <div class="container">
     <header class="header">
-        <img src="{% static 'images/logos/bear-head-orange-red.png' %}" alt="Лого" class="logo">
+        <img src="{% static 'images/logos/bear-head-orange-red.png' %}" class="logo">
         <h1>Ремесленики</h1>
     </header>
 
@@ -63,12 +63,6 @@
             <div class="title" style="text-align: center;">{{ material.name }}</div>
         </div>
         {% endfor %}
-    </div>
-
-    <div class="links">
-        <a href="#">Vkontakte</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
     </div>
 </div>
 
