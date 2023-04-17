@@ -5,27 +5,27 @@
 */
 
 .on-click-unfold-toggle--modal {
-    z-index: 10001;
+  z-index: 10001;
 
-    border-radius: 7px;
+  border-radius: 7px;
 
-    width: 0;
-    height: 0;
-    overflow: hidden;
-    position: absolute;
-    background-color: #ddd;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .7);
-    /* display: none; */
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  background-color: #ddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, .7);
+  /* display: none; */
 
-    transition: .2s;
+  transition: .2s;
 }
 
 @font-face {
-    font-family: 'Davida Decor';
-    src: url("{% static  'fonts/Davida-Decor.ttf' %}") format('truetype');
-  }
+  font-family: 'Davida Decor';
+  src: url("fonts/Davida-Decor.ttf") format('truetype');
+}
 
-  @font-face {
-    font-family: 'Mysteria Nouveau';
-    src: url("{% static  'fonts/Mysteria-Nouveau.ttf' %}") format('truetype');
-  }
+@font-face {
+  font-family: 'Mysteria Nouveau';
+  src: url("fonts/Mysteria-Nouveau.ttf") format('truetype');
+}
