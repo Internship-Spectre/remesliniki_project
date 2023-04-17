@@ -48,6 +48,12 @@
               Заказы
           </a>
         </li>
+        <li class="nav-item">
+          <a  href="{% url 'products_index' %}"
+              class="nav-link text-decoration-none {% if url_name == 'products_index' %}active{% endif %}">
+              Каталог
+          </a>
+        </li>
         
       </ul>
 

@@ -19,3 +19,13 @@
 
     transition: .2s;
 }
+
+@font-face {
+    font-family: 'Davida Decor';
+    src: url("{% static  'fonts/Davida-Decor.ttf' %}") format('truetype');
+  }
+
+  @font-face {
+    font-family: 'Mysteria Nouveau';
+    src: url("{% static  'fonts/Mysteria-Nouveau.ttf' %}") format('truetype');
+  }

@@ -5,7 +5,9 @@
 {% block title %}Главная страница{% endblock %}
 
 {% block links %}
+
 <link href="{% static 'styles/home/index.css' %}" rel="stylesheet">
+
 {% endblock %}
 
 {% block content %}
@@ -59,14 +61,15 @@
         </div>
     </div>
     <h1 style="margin-top: 15px; text-align: center;">Материалы</h1>
-    <div class="scroll-bar">
+    <div class="scroll-list">
         {% for material in materials %}
-        <div class="card">
+        <div class="card scroll-list-card">
             <img src="{{ material.image }}">
             <div class="title" style="text-align: center;">{{ material.name }}</div>
         </div>
         {% endfor %}
     </div>
-</div>
+
+
 
 {% endblock %}
