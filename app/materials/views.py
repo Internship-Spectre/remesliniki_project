@@ -7,3 +7,5 @@ def index(request):
 
     args = {'materials': materials}
     return render(request, 'materials/index.html', args)
+
+

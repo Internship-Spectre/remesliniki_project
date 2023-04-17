@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .froms import RegistrationFrom
+from .forms import RegistrationFrom
 from django.contrib.auth import login, logout, authenticate
 from materials.models import Material
 
