@@ -1,7 +1,8 @@
 {% load static %}
 
-<nav  class="navbar navbar-expand-md navbar-dark"
-      style="background-color: #B3632B;">
+<link rel="stylesheet" href="{% static 'styles/shared/header.css' %}">
+
+<nav class="navbar navbar-expand-md navbar-dark custom-navbar">
   <div class="container-fluid">
 
 
@@ -70,7 +71,7 @@
 
             {% else %}
               <a  href="{% url 'login' %}"
-                  class="text-decoration-none text-dark">
+                  class="text-decoration-none text-light">
                   Авторизация
               </a>
 
