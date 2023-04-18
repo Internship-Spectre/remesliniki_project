@@ -12,5 +12,3 @@ class Product(models.Model):
     quantity = models.IntegerField()
 
     materials = models.ManyToManyField(Material, blank=True)
-
-    

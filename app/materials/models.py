@@ -6,3 +6,6 @@ class Material(models.Model):
 
     description = models.TextField()
     quantity = models.IntegerField()
+
+    def __str__(self):
+        return self.name
