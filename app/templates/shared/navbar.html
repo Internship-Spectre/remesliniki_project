@@ -6,78 +6,76 @@
   <div class="container-fluid">
 
 
-    <a class="text-decoration-none text-light text-uppercase fs-3"
-        href="{% url 'home' %}"
-        style="font-family: 'Mysteria Nouveau';">
-      
-        <img  src="{% static 'images/logos/bear-head-orange-red.png' %}"
-              alt="My image"
-              style="max-width: 50px">
-        Ремесленники
+    <a class="text-decoration-none text-light text-uppercase fs-3" href="{% url 'home' %}"
+      style="font-family: 'Mysteria Nouveau';">
+
+      <img src="{% static 'images/logos/bear-head-orange-red.png' %}" alt="My image" style="max-width: 50px">
+      Ремесленники
 
     </a>
 
     <!-- Бургер меню для мобильных устройств -->
-    <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+      aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 
 
       <span class="navbar-toggler-icon"></span>
     </button>
-    
-    <div  class="collapse navbar-collapse"
-          id="navbarCollapse">
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
       {% with request.resolver_match.url_name as url_name %}
       <ul class="navbar-nav me-5 ms-auto">
-        
+
         <li class="nav-item">
-          <a href="{% url 'home' %}" class="nav-link text-decoration-none {% if url_name == 'home' %}active{% endif %}">Главная</a>
+          <a href="{% url 'home' %}"
+            class="nav-link text-decoration-none {% if url_name == 'home' %}active{% endif %}">Главная</a>
         </li>
         <li class="nav-item">
-          <a  href="{% url 'materials_index' %}"
-              class="nav-link text-decoration-none {% if url_name == 'materials_index' %}active{% endif %}">
+          <a href="{% url 'materials_index' %}"
+            class="nav-link text-decoration-none {% if url_name == 'materials_index' %}active{% endif %}">
             Материалы
           </a>
         </li>
         <li class="nav-item">
-          <a  href="{% url 'orders_index' %}"
-              class="nav-link text-decoration-none {% if url_name == 'orders_index' %}active{% endif %}">
-              Заказы
+          <a href="{% url 'orders_index' %}"
+            class="nav-link text-decoration-none {% if url_name == 'orders_index' %}active{% endif %}">
+            Заказы
           </a>
         </li>
         <li class="nav-item">
-          <a  href="{% url 'products_index' %}"
-              class="nav-link text-decoration-none {% if url_name == 'products_index' %}active{% endif %}">
-              Каталог
+          <a href="{% url 'products_index' %}"
+            class="nav-link text-decoration-none {% if url_name == 'products_index' %}active{% endif %}">
+            Каталог
           </a>
         </li>
-        
+        <li class="nav-item">
+          <a href="{% url 'blog_index' %}"
+            class="nav-link text-decoration-none {% if url_name == 'blog_index' %}active{% endif %}">
+            Блог
+          </a>
+        </li>
+
       </ul>
 
       {% endwith %}
-        </div>
-        {% if request.user.is_authenticated %}
-        <div class="on-click-unfold-toggle">
+    </div>
+    {% if request.user.is_authenticated %}
+    <div class="on-click-unfold-toggle">
 
-          <!-- <div class="me-1 ps-1"> -->
-            <p class="text-light d-inline">{{ request.user.username }}</p>
-            <a href="{% url 'logout' %}">Выйти</a>
-          <!-- </div> -->
-          <div class="on-click-unfold-toggle--modal">
+      <!-- <div class="me-1 ps-1"> -->
+      <p class="text-light d-inline">{{ request.user.username }}</p>
+      <a href="{% url 'logout' %}">Выйти</a>
+      <!-- </div> -->
+      <div class="on-click-unfold-toggle--modal">
 
-            {% else %}
-              <a  href="{% url 'login' %}"
-                  class="text-decoration-none text-light">
-                  Авторизация
-              </a>
+        {% else %}
+        <a href="{% url 'login' %}" class="text-decoration-none text-light">
+          Авторизация
+        </a>
 
-            {% endif %}
-        </div>
-  </div>
+        {% endif %}
+      </div>
+    </div>
 
 </nav>
 
