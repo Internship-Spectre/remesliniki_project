@@ -4,6 +4,10 @@
 и работы скриптов
 */
 
+body {
+  background-image: linear-gradient(220deg, #c2c2c2 5.66%, #ffc194 94.35%);
+}
+
 .on-click-unfold-toggle--modal {
   z-index: 10001;
 
