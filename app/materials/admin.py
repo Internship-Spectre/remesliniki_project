@@ -3,4 +3,4 @@ from .models import Material
 
 @admin.register(Material)
 class MaterialAdmin(admin.ModelAdmin):
-    list_display = [field.name for field in Material._meta.get_fields()]
+    list_display = ['name', 'image', 'description', 'quantity']

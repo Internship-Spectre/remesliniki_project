@@ -1,13 +1,19 @@
 from django.shortcuts import render, redirect
 from .forms import RegistrationFrom
-from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth import login
 from materials.models import Material
+from products.models import Product
 
 
 def index(request):
-    materials = Material.objects.all()
+    materials = Material.objects.all()[:10]
+    products = Product.objects.all()[:10]
 
-    args = {'materials': materials}
+
+    args = {
+        'materials': materials,
+        'products': products
+    }
 
     return render(request, 'home/index.html', args)
 
