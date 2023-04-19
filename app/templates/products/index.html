@@ -3,40 +3,39 @@
 {% load static %}
 
 {% block links %}
-
 <link href="{% static 'styles/home/index.css' %}" rel="stylesheet">
-
 {% endblock %}
-
 {% block content %}
 <div class="container">
     <div class="header shadow wood-background">
         <img src="{% static 'images/logos/bear-orange-red-left.png' %}" class="logo" style="width: 2.5em;">
         <h1 class="text-light pe-2" style="font-family: 'Mysteria Nouveau'; font-size: 50px;">Каталог</h1>
         <img src="{% static 'images/logos/bear-orange-red-right.png' %}" class="logo" style="width: 2.5em;">
-    </div>
 
-
-    <div class="row mt-5">
-        <div class="col">
+        <div class="col mt-1">
             <form action="{% url 'products_search' %}" method="get">
                 <div class="input-group">
-                    <button onclick="location.href='{% url 'home' %}'" class="btn btn-primary me-2">Назад</button>
                     <input type="text" name="q" class="form-control" placeholder="Поиск">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-primary">Найти</button>
                     </div>
+                    <button onclick="location.href='{% url 'home' %}'" class="btn btn-primary ms-2">Назад</button>
                 </div>
             </form>
         </div>
     </div>
+</div>
 
-    <div class="row mt-5">
+<div class="container mt-5">
+    <div class="row">
         {% if products %}
         {% for product in products %}
-        <div class="col-sm-4 mb-3">
-            <div class="card h-100">
-                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+        <div class="col-md-4 mb-3">
+            <div class="card h-100 border-0">
+                <div class="card-img-top" style="height: 393px;  overflow: hidden;">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" style="height: 100%;">
+                    </a>
+                </div>
                 <div class="card-body">
                     <h5 class="card-title">{{ product.name }}</h5>
                     <p class="card-text">{{ product.description }}</p>
@@ -47,15 +46,21 @@
                         {% endfor %}
                     </p>
                 </div>
+                <div class="card-footer bg-white border-0">
+                    <button class="btn btn-primary">В корзину</button>
+                </div>
             </div>
         </div>
         {% empty %}
-        <p>Товары не найдены.</p>
+        <div class="col-md-12">
+            <p class="text-center">Товары не найдены.</p>
+        </div>
         {% endfor %}
         {% else %}
-        <p>Товары не найдены.</p>
+        <div class="col-md-12">
+            <p class="text-center">Товары не найдены.</p>
+        </div>
         {% endif %}
     </div>
-
 </div>
-{% endblock %}``
+{% endblock %}
