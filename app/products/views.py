@@ -3,9 +3,6 @@ from .models import Product
 
 # Create your views here.
 
-
-
-
 def products_search(request):
     query = request.GET.get('q')
 
