@@ -51,11 +51,12 @@
         {% for material in materials %}
         <div class="card scroll-list-card">
             <img src="{{ material.image }}">
-            <a href ="#" class="text-decoration-none text-dark"><div class="title" style="text-align: center;">{{ material.name }}</div></a>
+            <a href="{% url 'products_list_by_material' material_name=material.name %}" class="text-decoration-none text-dark">
+                <div class="title" style="text-align: center;">{{ material.name }}</div>
+            </a>
         </div>
         {% endfor %}
     </div>
-
 </div>
 
 {% endblock %}
