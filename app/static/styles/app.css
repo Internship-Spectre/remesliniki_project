@@ -33,3 +33,9 @@ body {
   font-family: 'Mysteria Nouveau';
   src: url("fonts/Mysteria-Nouveau.ttf") format('truetype');
 }
+
+.wood-background {
+  background-color: #ff9b53;
+  background-image: url('../images/backgrounds/wood_texture.png');
+  background-blend-mode: multiply;
+}
