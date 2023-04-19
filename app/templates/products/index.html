@@ -2,30 +2,60 @@
 
 {% load static %}
 
-{% load static %}
+{% block links %}
+
+<link href="{% static 'styles/home/index.css' %}" rel="stylesheet">
+
+{% endblock %}
 
 {% block content %}
-
-<div class="card mt-3 mb-3 p-2 shadow">
-    <div class="container-fluid">
-        <form class="d-flex m-2 p-2" role="search">
-            <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
-            <button class="btn btn-outline-warning" type="submit">Поиск</button>
-        </form>
+<div class="container">
+    <div class="header shadow wood-background">
+        <img src="{% static 'images/logos/bear-orange-red-left.png' %}" class="logo" style="width: 2.5em;">
+        <h1 class="text-light pe-2" style="font-family: 'Mysteria Nouveau'; font-size: 50px;">Каталог</h1>
+        <img src="{% static 'images/logos/bear-orange-red-right.png' %}" class="logo" style="width: 2.5em;">
     </div>
-</div>
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-    {% for i in '123456789'|make_list %}
-    <div class="col">
-        <div class="card shadow">
-            <div class="card-body">
-                <h5 class="card-title"><img class="img-fluid img-thumbnail"
-                        src="{% static 'app/images/placeholder-16-9.jpg' %}"></h5>
-                <p class="card-text">Описание товара {{ forloop.counter }}</p>
-                <a href="#" class="btn btn-warning">Посмотреть</a>
-            </div>
+
+
+    <div class="row mt-5">
+        <div class="col">
+            <form action="{% url 'products_search' %}" method="get">
+                <div class="input-group">
+                    <button onclick="location.href='{% url 'home' %}'" class="btn btn-primary me-2">Назад</button>
+                    <input type="text" name="q" class="form-control" placeholder="Поиск">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary">Найти</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-    {% endfor %}
+
+    <div class="row mt-5">
+        {% if products %}
+        {% for product in products %}
+        <div class="col-sm-4 mb-3">
+            <div class="card h-100">
+                <img class="card-img-top" src="{{ product.image.url }}" alt="{{ product.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">{{ product.description }}</p>
+                    <p class="card-text"><small class="text-muted">{{ product.quantity }} в наличии</small></p>
+                    <p class="card-text">Материалы:
+                        {% for material in product.materials.all %}
+                        {{ material.name }}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Товары не найдены.</p>
+        {% endfor %}
+        {% else %}
+        <p>Товары не найдены.</p>
+        {% endif %}
+    </div>
+
 </div>
-{% endblock %}
+{% endblock %}``
