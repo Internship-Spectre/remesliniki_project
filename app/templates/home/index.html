@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
+<!-- <div class="container"> -->
     <div class="header shadow wood-background">
         <img src="{% static 'images/logos/bear-orange-red-left.png' %}" class="logo" style="width: 2.5em;">
         <h1 class="text-light pe-2" style="font-family: 'Mysteria Nouveau'; font-size: 50px;">Ремесленики</h1>
@@ -38,7 +38,7 @@
 
     </div>
     <h1 style="margin-top:15px;text-align:center;">Уникальные товары</h1>
-    <div class="scroll-bar d-flex overflow-scroll">
+    <div class="d-flex overflow-x-scroll">
         {% for product in products %}
         <div class="card scroll-list-card">
             <img src="{{ product.image }}">
@@ -48,7 +48,7 @@
         {% endfor %}
     </div>
     <h1 style="margin-top: 15px; text-align: center;">Материалы</h1>
-    <div class="scroll-bar d-flex overflow-scroll">
+    <div class="d-flex overflow-x-scroll ">
         {% for material in materials %}
         <div class="card scroll-list-card">
             <img src="{{ material.image }}">
@@ -58,6 +58,6 @@
         </div>
         {% endfor %}
     </div>
-</div>
+<!-- </div> -->
 
 {% endblock %}
