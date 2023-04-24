@@ -35,7 +35,8 @@ body {
 }
 
 .wood-background {
-  background-color: #ff9b53;
-  background-image: url('../images/backgrounds/wood_texture.png');
-  background-blend-mode: multiply;
+  background: url('../images/backgrounds/wood_texture.png');
+  background-size: cover;
+  background-blend-mode:multiply;
+  background-color: #ff9b53
 }
